@@ -1,5 +1,7 @@
 fastapi==0.110.0
 uvicorn==0.27.1
 pydantic==2.6.3
-openai==1.13.3
+openai==1.55.3
 chromadb==0.4.24
+numpy==1.26.4
+python-dotenv==1.0.1
