@@ -1,0 +1,321 @@
+{
+  "generated_at": "2026-08-27T23:10:27.773280+00:00",
+  "summary": {
+    "total_cases": 12,
+    "passed": 12,
+    "failed": 0,
+    "average_quality_score": 1.0
+  },
+  "task1_results": [
+    {
+      "id": "T1-01-connector-timeout",
+      "input": {
+        "subject": "Unable to connect DataBridge Pro to Connectors",
+        "body": "We're experiencing a critical issue. Our Connectors pipeline has been failing since yesterday. Error message: 'ERR_CONNECTION_TIMEOUT after 30s'. This is impacting 47 users in production."
+      },
+      "adversarial": false,
+      "passed": true,
+      "score": 1.0,
+      "notes": "expected_category=Integration got=Integration; expected_urgency in {'P1', 'P2'} got=P1",
+      "raw_output": {
+        "classification": {
+          "product": "DataBridge Pro",
+          "product_area": "Connectors",
+          "category": "Integration",
+          "urgency": "P1",
+          "urgency_reasoning": "Production environment is impacted, affecting 47 users with a pipeline failure since yesterday."
+        },
+        "retrieval": {
+          "matched_doc": "knowledge-base/products/databridge-pro.md",
+          "relevant_section": "Connector authentication failure",
+          "confidence_score": 0.85
+        },
+        "routing": {
+          "recommended_responder_team": "Integrations Support Team"
+        },
+        "response": {
+          "draft_first_response": "Hello, thank you for reaching out to DataBridge Pro Support. I see you are experiencing a connection timeout issue with your production connectors impacting 47 users. To help us resolve this quickly, please check if your source credentials have expired (which often happens after 90 days) or try regenerating the OAuth token from the connector settings page. If you are using Salesforce or BigQuery, ensure all required scopes and roles are properly assigned. We are investigating this on our end as well."
+        }
+      }
+    },
+    {
+      "id": "T1-02-billing-question",
+      "input": {
+        "subject": "Question about invoice",
+        "body": "Hi, we were charged twice this month for our Enterprise plan. Can you clarify the billing cycle and refund the duplicate charge?"
+      },
+      "adversarial": false,
+      "passed": true,
+      "score": 1.0,
+      "notes": "expected_category=Billing got=Billing; expected_urgency in {'P3', 'P4'} got=P3",
+      "raw_output": {
+        "classification": {
+          "product": "Enterprise",
+          "product_area": "Invoices & Payment",
+          "category": "Billing",
+          "urgency": "P3",
+          "urgency_reasoning": "Standard billing inquiry regarding a potential duplicate charge, not causing an immediate system outage."
+        },
+        "retrieval": {
+          "matched_doc": "knowledge-base/billing/billing-and-plans.md",
+          "relevant_section": "Invoices & Payment",
+          "confidence_score": 0.95
+        },
+        "routing": {
+          "recommended_responder_team": "Billing Support"
+        },
+        "response": {
+          "draft_first_response": "Hello, thank you for reaching out regarding your invoice. Invoices are generated on the 1st of each month or on the annual renewal date, and you can view and download all invoices at Settings \u2192 Billing \u2192 Invoices. Please note that invoice disputes must be raised within 30 days of the issue date. Let us know the details of the duplicate charge and we will investigate and process a refund if verified."
+        }
+      }
+    },
+    {
+      "id": "T1-03-feature-request",
+      "input": {
+        "subject": "Request: dark mode for AnalyticsHub",
+        "body": "It would be great if AnalyticsHub supported a dark mode theme for late-night monitoring sessions."
+      },
+      "adversarial": false,
+      "passed": true,
+      "score": 1.0,
+      "notes": "expected_category=Feature Request got=Feature Request; expected_urgency in {'P4'} got=P4",
+      "raw_output": {
+        "classification": {
+          "product": "AnalyticsHub",
+          "product_area": "UI/UX",
+          "category": "Feature Request",
+          "urgency": "P4",
+          "urgency_reasoning": "The user is submitting a non-critical feature request for a dark mode theme, which does not impact core functionality or prevent users from using the application."
+        },
+        "retrieval": {
+          "matched_doc": "knowledge-base/products/analyticshub.md",
+          "relevant_section": "Overview",
+          "confidence_score": 0.8
+        },
+        "routing": {
+          "recommended_responder_team": "Product Management"
+        },
+        "response": {
+          "draft_first_response": "Hello! Thank you for reaching out and sharing your suggestion for AnalyticsHub. We agree that a dark mode would be a great addition for late-night monitoring sessions. I have logged this as a feature request with our product team for future consideration. Please let us know if you have any other ideas or feedback!"
+        }
+      }
+    },
+    {
+      "id": "T1-04-data-loss-critical",
+      "input": {
+        "subject": "URGENT: Lost 3 months of records in SecureVault",
+        "body": "After the last sync, all records from the past 3 months have disappeared from SecureVault. This is affecting our compliance reporting due tomorrow."
+      },
+      "adversarial": false,
+      "passed": true,
+      "score": 1.0,
+      "notes": "expected_category=Data Loss got=Data Loss; expected_urgency in {'P1'} got=P1",
+      "raw_output": {
+        "classification": {
+          "product": "SecureVault",
+          "product_area": "Data Storage",
+          "category": "Data Loss",
+          "urgency": "P1",
+          "urgency_reasoning": "Data loss of 3 months of records impacting compliance reporting due tomorrow."
+        },
+        "retrieval": {
+          "matched_doc": "knowledge-base/products/securevault.md",
+          "relevant_section": "Overview",
+          "confidence_score": 0.4
+        },
+        "routing": {
+          "recommended_responder_team": "Database Engineering / Data Recovery"
+        },
+        "response": {
+          "draft_first_response": "Hello, we understand this is an urgent issue affecting your compliance reporting. Our data recovery team has been alerted and is investigating the missing records from your SecureVault instance. We will provide an update as soon as possible."
+        }
+      }
+    },
+    {
+      "id": "T1-05-how-to",
+      "input": {
+        "subject": "How do I add a new user to WorkflowEngine?",
+        "body": "Could you point me to the steps for adding a teammate as an editor in WorkflowEngine?"
+      },
+      "adversarial": false,
+      "passed": true,
+      "score": 1.0,
+      "notes": "expected_category=How-To got=How-To; expected_urgency in {'P3', 'P4'} got=P4",
+      "raw_output": {
+        "classification": {
+          "product": "WorkflowEngine",
+          "product_area": "User Management",
+          "category": "How-To",
+          "urgency": "P4",
+          "urgency_reasoning": "The user is asking a standard informational question about user onboarding and adding a teammate, which does not impact system availability or data integrity."
+        },
+        "retrieval": {
+          "matched_doc": "knowledge-base/onboarding/onboarding-guide.md",
+          "relevant_section": "Admins -> User management & SSO",
+          "confidence_score": 0.85
+        },
+        "routing": {
+          "recommended_responder_team": "Customer Support"
+        },
+        "response": {
+          "draft_first_response": "Hello! To add a teammate to WorkflowEngine, you can refer to our Admin onboarding training on User management & SSO, or navigate directly to your account settings and select the user management tab to invite new members. Let us know if you need any further assistance!"
+        }
+      }
+    },
+    {
+      "id": "T1-06-ADVERSARIAL-vague",
+      "input": {
+        "subject": "Something is broken",
+        "body": "It's not working properly, please help."
+      },
+      "adversarial": true,
+      "passed": true,
+      "score": 1.0,
+      "notes": "Adversarial: pipeline handled vague input without crashing.",
+      "raw_output": {
+        "classification": {
+          "product": "General",
+          "product_area": "General",
+          "category": "Bug",
+          "urgency": "P3",
+          "urgency_reasoning": "The user provided a very vague description with no details on impact, system failure, or specific errors."
+        },
+        "retrieval": {
+          "matched_doc": "knowledge-base/troubleshooting/performance-and-integrations.md",
+          "relevant_section": "Troubleshooting: Integration Issues",
+          "confidence_score": 0.2
+        },
+        "routing": {
+          "recommended_responder_team": "Support Tier 1"
+        },
+        "response": {
+          "draft_first_response": "Hello! Thank you for reaching out to support. Could you please provide a bit more detail about what you are trying to do, any error messages you are seeing, and the steps to reproduce the issue so we can better assist you?"
+        }
+      }
+    }
+  ],
+  "task2_results": [
+    {
+      "id": "T2-01-existing-account-basic",
+      "account_id": "ACC-3336",
+      "adversarial": false,
+      "passed": true,
+      "score": 1.0,
+      "notes": "has_all_sections=True",
+      "raw_output": {
+        "executive_summary": "Omni Consumer Products is currently classified as At Risk due to an inactive usage trend and escalating dissatisfaction. The account has experienced three consecutive P1 tickets within the last 30 days, severely impacting their operational workflow. Furthermore, key decision makers are actively considering evaluation of a competing vendor. Immediate TAM intervention is required to address these persistent technical roadblocks and secure the renewal.",
+        "open_risks_and_flagged_issues": [
+          {
+            "risk_title": "Performance Degradation",
+            "ticket_id": "TKT-10293",
+            "justification_quote": "We've noticed significant performance degradation in DataBridge Pro over the past 12 days."
+          }
+        ],
+        "recommended_talking_points": [
+          "Acknowledge the recent P1 incidents and express sincere regret over the 12-day performance degradation in DataBridge Pro.",
+          "Review the root cause analysis for the recent outages and share the concrete steps engineering has taken to prevent recurrence.",
+          "Discuss the evaluation of competing vendors and present a tailored roadmap to demonstrate long-term value and improved stability."
+        ]
+      }
+    },
+    {
+      "id": "T2-02-existing-account-quotes-verbatim",
+      "account_id": "ACC-3336",
+      "adversarial": false,
+      "passed": true,
+      "score": 1.0,
+      "notes": "1/1 quotes verified verbatim + real ticket_id",
+      "raw_output": {
+        "executive_summary": "Omni Consumer Products is currently classified as At Risk due to an inactive usage trend and escalating dissatisfaction. The account has experienced three consecutive P1 tickets within the last 30 days, severely impacting their operations. Furthermore, the primary decision-maker is actively considering a competing vendor evaluation. It is critical to address these performance and reliability concerns immediately to secure account retention.",
+        "open_risks_and_flagged_issues": [
+          {
+            "risk_title": "Performance Degradation",
+            "ticket_id": "TKT-10293",
+            "justification_quote": "We've noticed significant performance degradation in DataBridge Pro over the past 12 days."
+          }
+        ],
+        "recommended_talking_points": [
+          "Acknowledge and apologize for the 3 consecutive P1 tickets experienced over the last 30 days.",
+          "Provide a detailed root cause analysis and resolution timeline for the DataBridge Pro performance issues referenced in ticket TKT-10293.",
+          "Discuss the roadmap for EU-West region stability to regain confidence in our infrastructure.",
+          "Address the decision-maker's evaluation of competing vendors and present a tailored value retention plan."
+        ]
+      }
+    },
+    {
+      "id": "T2-03-nonexistent-account",
+      "account_id": "ACC-9999999",
+      "adversarial": false,
+      "passed": true,
+      "score": 1.0,
+      "notes": "error_field_present=True",
+      "raw_output": {
+        "error": "Account ID ACC-9999999 not found."
+      }
+    },
+    {
+      "id": "T2-04-summary-length",
+      "account_id": "ACC-3336",
+      "adversarial": false,
+      "passed": true,
+      "score": 1.0,
+      "notes": "approx_sentence_count=4",
+      "raw_output": {
+        "executive_summary": "Omni Consumer Products is currently flagged as at-risk due to declining account health and an inactive usage trend. The client has experienced severe operational friction, evidenced by three consecutive P1 tickets over the last 30 days. Furthermore, the decision maker is actively considering a competing vendor evaluation if these stability issues are not resolved immediately. A focused intervention is urgently required to restore client confidence and stabilize their platform usage.",
+        "open_risks_and_flagged_issues": [
+          {
+            "risk_title": "Performance Degradation",
+            "ticket_id": "TKT-10293",
+            "justification_quote": "We've noticed significant performance degradation in DataBridge Pro over the past 12 days."
+          }
+        ],
+        "recommended_talking_points": [
+          "Acknowledge and apologize for the recent string of 3 consecutive P1 tickets impacting EU-West operations.",
+          "Provide a detailed root cause analysis and resolution timeline for the ongoing DataBridge Pro performance issues.",
+          "Discuss dedicated optimization strategies to bring page loads and API operation speeds back to SLA standards for all 198 affected users.",
+          "Address the evaluation of competing vendors and present a customized value recovery plan to secure renewal."
+        ]
+      }
+    },
+    {
+      "id": "T2-05-talking-points-present",
+      "account_id": "ACC-3336",
+      "adversarial": false,
+      "passed": true,
+      "score": 1.0,
+      "notes": "talking_points_count=3",
+      "raw_output": {
+        "executive_summary": "Omni Consumer Products is currently classified as At Risk due to an inactive usage trend and escalating customer dissatisfaction. The account has experienced three consecutive P1 tickets within the last 30 days, severely impacting their operational workflow. Furthermore, key decision makers are actively considering evaluations of competing vendors. Immediate technical and relationship intervention is required to secure renewal.",
+        "open_risks_and_flagged_issues": [
+          {
+            "risk_title": "Performance Degradation in DataBridge Pro",
+            "ticket_id": "TKT-10293",
+            "justification_quote": "We've noticed significant performance degradation in DataBridge Pro over the past 12 days."
+          }
+        ],
+        "recommended_talking_points": [
+          "Address the root cause of the recent performance degradation and review the remediation plan for the EU-West region.",
+          "Acknowledge the impact of the three consecutive P1 tickets and outline the steps engineering has taken to prevent recurrence.",
+          "Discuss the upcoming contract renewal and present a tailored value optimization plan to address their evaluation of competing vendors."
+        ]
+      }
+    },
+    {
+      "id": "T2-06-ADVERSARIAL-no-recent-tickets",
+      "account_id": "ACC-3033",
+      "adversarial": true,
+      "passed": true,
+      "score": 1.0,
+      "notes": "No tickets in window, no risks invented \u2014 correct.",
+      "raw_output": {
+        "executive_summary": "Polaris Group continues to demonstrate strong overall account health with a consistently positive usage trend. Product adoption has steadily increased across their primary engineering departments over the past quarter. No formal escalations or critical blockers are currently impacting their daily operations. The upcoming meeting will serve as a routine alignment to discuss upcoming product roadmap features and expansion opportunities.",
+        "open_risks_and_flagged_issues": [],
+        "recommended_talking_points": [
+          "Acknowledge the positive upward trend in platform utilization over the last quarter.",
+          "Discuss upcoming expansion plans and potential additional license allocations.",
+          "Review the upcoming product roadmap highlights relevant to their core workflows."
+        ]
+      }
+    }
+  ]
+}
