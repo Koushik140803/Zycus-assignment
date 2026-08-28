@@ -188,6 +188,16 @@ behaves under 10x scale.
 
 ---
 
+## 7a. Prompt Versioning
+
+Every prompt used in this project is tagged in code with a version identifier
+(e.g. `# PROMPT: triage-classifier | version: v1.1`). Full version history,
+including what changed between versions and why, is tracked in
+[`PROMPT_CHANGELOG.md`](./PROMPT_CHANGELOG.md).
+
+---
+
+
 ## 8. Environment Variables
 
 See `.env.example` for the full list. Required:

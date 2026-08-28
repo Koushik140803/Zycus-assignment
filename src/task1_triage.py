@@ -90,6 +90,7 @@ def triage_ticket(ticket_subject: str, ticket_body: str) -> TriageOutput:
     for doc, meta in zip(results["documents"][0], results["metadatas"][0]):
         context_text += f"\n--- Source: {meta['source']} ---\n{doc}\n"
         
+    # PROMPT: triage-classifier | version: v1.1 | see PROMPT_CHANGELOG.md
     system_prompt = f"""You are an expert technical support agent triage system. 
     Analyze the incoming ticket and output a structured triage JSON.
     Use the provided Knowledge Base context to determine the appropriate response, matched document, and responder team.

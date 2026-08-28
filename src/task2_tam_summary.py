@@ -90,6 +90,7 @@ def generate_tam_brief(account_id: str) -> dict:
     # ------------------------------------------
     # Chain Link 1: Strict Quote Extraction
     # ------------------------------------------
+    # PROMPT: risk-extractor (chain link 1) | version: v1.1 | see PROMPT_CHANGELOG.md
     extractor_prompt = f"""You are a strict data auditing system. Read the account context and recent tickets.
     Extract direct, verbatim quotes from the tickets that suggest churn risk, frustration, or escalation intent.
     Do not summarize the quote. Output the exact substring.
@@ -112,6 +113,7 @@ def generate_tam_brief(account_id: str) -> dict:
     # ------------------------------------------
     # Chain Link 2: Final Brief Synthesis
     # ------------------------------------------
+    # PROMPT: brief-synthesizer (chain link 2) | version: v1.1 | see PROMPT_CHANGELOG.md
     synthesizer_prompt = f"""You are an expert Technical Account Manager (TAM) assistant. Write a pre-meeting brief.
     Use the provided account context, ticket history, and the extracted risk quotes to formulate the final brief.
     Requirements:
