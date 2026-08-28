@@ -9,9 +9,8 @@ import chromadb
 load_dotenv()
 # The OpenAI client will automatically pick up OPENAI_API_KEY and OPENAI_BASE_URL from your .env
 client = OpenAI(
-    base_url=os.getenv("KAGGLE_VLLM_URL"),
-    api_key=os.getenv("KAGGLE_API_KEY", "not-needed"),
-    default_headers={"ngrok-skip-browser-warning": "true"}
+    base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
+    api_key=os.getenv("GEMINI_API_KEY"),
 )
 # ==========================================
 # 1. Pydantic Output Schema
@@ -101,7 +100,7 @@ def triage_ticket(ticket_subject: str, ticket_body: str) -> TriageOutput:
     
     # Use OpenAI's structured outputs to guarantee the shape of the data
     response = client.beta.chat.completions.parse(
-        model=os.getenv("MODEL_NAME", "Qwen/Qwen2.5-3B-Instruct"), 
+        model=os.getenv("MODEL_NAME", "gemini-3.5-flash-lite"), 
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": query}

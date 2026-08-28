@@ -9,9 +9,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 client = OpenAI(
-    base_url=os.getenv("KAGGLE_VLLM_URL"),
-    api_key=os.getenv("KAGGLE_API_KEY", "not-needed"),
-    default_headers={"ngrok-skip-browser-warning": "true"}
+    base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
+    api_key=os.getenv("GEMINI_API_KEY"),
 )
 
 # ==========================================
@@ -100,8 +99,11 @@ def generate_tam_brief(account_id: str) -> dict:
     """
     
     extraction_response = client.beta.chat.completions.parse(
-        model=os.getenv("MODEL_NAME", "Qwen/Qwen2.5-3B-Instruct"),
-        messages=[{"role": "system", "content": extractor_prompt}],
+        model=os.getenv("MODEL_NAME", "gemini-3.5-flash-lite"),
+        messages=[
+            {"role": "system", "content": "You are a strict data auditing system that extracts verbatim quotes."},
+            {"role": "user", "content": extractor_prompt},
+        ],
         response_format=RiskExtraction,
         temperature=0.0 # Absolute determinism
     )
@@ -123,8 +125,11 @@ def generate_tam_brief(account_id: str) -> dict:
     """
     
     synthesis_response = client.beta.chat.completions.parse(
-        model=os.getenv("MODEL_NAME", "Qwen/Qwen2.5-3B-Instruct"),
-        messages=[{"role": "system", "content": synthesizer_prompt}],
+        model=os.getenv("MODEL_NAME", "gemini-3.5-flash-lite"),
+        messages=[
+            {"role": "system", "content": "You are an expert Technical Account Manager (TAM) assistant."},
+            {"role": "user", "content": synthesizer_prompt},
+        ],
         response_format=TAMAccountBrief,
         temperature=0.0
     )
