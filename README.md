@@ -11,6 +11,12 @@ This repo implements:
 
 ---
 
+## Demo Video
+
+[Watch the walkthrough](https://drive.google.com/file/d/1sRinRd-lHwNs2XQ_SSvc3WQOp6u2YPTb/view?usp=sharing) - covers the code, a live demo of Tasks 1 and 2, and the eval results.
+
+---
+
 ## 1. Setup Instructions
 
 ### Prerequisites
